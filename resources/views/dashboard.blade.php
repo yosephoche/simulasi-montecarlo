@@ -150,6 +150,23 @@
                                 <div id="simulasi-chart" class="ct-chart"></div>
                             </div>
                         </div>
+
+                    </div>
+                    <div class="panel panel-headline">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Kesimpulan</h3>
+                            <p class="panel-subtitle">Kesimpulan hasil simulasi</p>
+                        </div>
+                        <div class="panel-body">
+                            <!-- <h4>Kesimpulan :</h4> -->
+                            <p>Berdasarkan hasil simulasi diatas, dapat disimpulkan bahwa :</p>
+                            <p>4 pasang sebanyak 1</p>
+                            <p>5 pasang sebanyak 1</p>
+                            <p>6 pasang sebanyak 2</p>
+                            <p>7 pasang sebanyak 3</p>
+                            <p>8 pasang sebanyak 3</p>
+                            <p>9 pasang sebanyak 0</p>
+                        </div>
                     </div>
 
                 </div>
@@ -191,6 +208,8 @@
                                 <div id="interval-chart" class="ct-chart"></div>
                             </div>
                         </div>
+
+                        
                     </div>
                 </div>
             </div>

@@ -92,7 +92,17 @@ class BilanganRandomController extends Controller
             $chart_interval['series'][$key] = $value['kumulatif'];
         }
 
-        // dd($chart_simulasi);
+        $kesimpulan = [];
+        // foreach ($random as $key => $value) {
+        //     $kesimpulan[] = $value['kebutuhan'];
+        //     // dd($value['kebutuhan']);
+        // }
+        // $kesimpulan = array_count_values($kesimpulan);
+
+        foreach ($permintaan as $key => $value) {
+            $kesimpulan[]["kebutuhan"] = $value;
+        }
+        dd($kesimpulan);
 
         // $chart_simulasi = [
         //     "label" => ['1','2','3','4', '5', '6', '7', '8', '9', '10'],

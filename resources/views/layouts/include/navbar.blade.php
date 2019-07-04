@@ -1,7 +1,7 @@
 <div class="sidebar-scroll">
 				<nav>	
                     <ul class="nav">
-                        <li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                        <li><a href="/" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 
                         <li><a href="elements.html" class=""><i class="lnr lnr-code"></i> <span>Elements</span></a></li>
 
