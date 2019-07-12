@@ -11,11 +11,11 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        
+
                     </div>
 
                     <div class="row">
-                        
+
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="data">
-                                </tbody>                                       
+                                </tbody>
                             </table>
                             <br>
                             <hr>
@@ -83,7 +83,7 @@
                         </form>
                     </div>
 
-                    
+
                     <!-- END TABLE STRIPED -->
                 </div>
                 <div class="col-md-6">
@@ -160,12 +160,9 @@
                         <div class="panel-body">
                             <!-- <h4>Kesimpulan :</h4> -->
                             <p>Berdasarkan hasil simulasi diatas, dapat disimpulkan bahwa :</p>
-                            <p>4 pasang sebanyak 1</p>
-                            <p>5 pasang sebanyak 1</p>
-                            <p>6 pasang sebanyak 2</p>
-                            <p>7 pasang sebanyak 3</p>
-                            <p>8 pasang sebanyak 3</p>
-                            <p>9 pasang sebanyak 0</p>
+                            @foreach ($kesimpulan as $key => $item)
+                                <p>{{ $key }} pasang sebanyak {{ $item }}</p>
+                            @endforeach
                         </div>
                     </div>
 
@@ -209,7 +206,7 @@
                             </div>
                         </div>
 
-                        
+
                     </div>
                 </div>
             </div>
@@ -265,7 +262,7 @@
 		};
 
 		new Chartist.Line('#interval-chart', data, options);
-	
+
 		// bar chart
 		options = {
 			height: "300px",
@@ -300,7 +297,7 @@
 		};
 
 		new Chartist.Line('#simulasi-chart', data, options);
-	
+
 		// bar chart
 		options = {
 			height: "300px",

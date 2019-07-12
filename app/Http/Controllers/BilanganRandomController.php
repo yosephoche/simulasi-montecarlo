@@ -28,7 +28,7 @@ class BilanganRandomController extends Controller
         $frekuensi = $request['frekuensi'];
         $permintaan = $request['permintaan'];
         $jmh = array_sum($frekuensi);
-        $data_distribusi = []; 
+        $data_distribusi = [];
         $data_interval = [];
         $kumulatif = [];
         $chart_interval = [];
@@ -58,10 +58,10 @@ class BilanganRandomController extends Controller
         $m = $request['m'];
         $z0 = $request['z'];
         $random = [];
-        
-        for ($i=0; $i < $iterasi; $i++) { 
+
+        for ($i=0; $i < $iterasi; $i++) {
             if ($i == 0) {
-                $random[$i] = ($a * $z0) % $m;  
+                $random[$i] = ($a * $z0) % $m;
             } else {
                 $random[$i] = ($a * $random[$i-1]) % $m;
             }
@@ -75,7 +75,7 @@ class BilanganRandomController extends Controller
             foreach ($data_interval as $k => $data) {
                 $from = $data['interval']['from'];
                 $to = $data['interval']['to'];
-                
+
                 if ($bil_rand >= $from && $bil_rand <= $to) {
                     $random[$key]["kebutuhan"] = $data_interval[$k]['permintaan'];
                     // dd($bil_rand,$from,$bil_rand >= $from, $data_interval[$k]['permintaan']);
@@ -93,23 +93,23 @@ class BilanganRandomController extends Controller
         }
 
         $kesimpulan = [];
-        // foreach ($random as $key => $value) {
-        //     $kesimpulan[] = $value['kebutuhan'];
-        //     // dd($value['kebutuhan']);
-        // }
-        // $kesimpulan = array_count_values($kesimpulan);
-
-        foreach ($permintaan as $key => $value) {
-            $kesimpulan[]["kebutuhan"] = $value;
+        foreach ($random as $key => $value) {
+            $kesimpulan[] = $value['kebutuhan'];
+            // dd($value['kebutuhan']);
         }
-        dd($kesimpulan);
+        $kesimpulan = array_count_values($kesimpulan);
+
+        // foreach ($permintaan as $key => $value) {
+        //     $kesimpulan[]["kebutuhan"] = $value;
+        // }
+        // dd($kesimpulan);
 
         // $chart_simulasi = [
         //     "label" => ['1','2','3','4', '5', '6', '7', '8', '9', '10'],
         //     "series" => [6, 6, 8, 7, 8, 7, 5, 8, 4, 7]
         // ];
 
-        return view('dashboard', compact('data_distribusi','data_interval', 'random', 'chart_interval', 'chart_simulasi'));
+        return view('dashboard', compact('data_distribusi','data_interval', 'random', 'chart_interval', 'chart_simulasi', 'kesimpulan'));
     }
 
     function random(Request $request)
