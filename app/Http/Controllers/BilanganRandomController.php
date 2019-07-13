@@ -14,13 +14,14 @@ class BilanganRandomController extends Controller
     // masukkan data masa lalu
     public function index()
     {
+        $kesimpulan = [];
         $data_chart = [];
         $data_interval = [];
         $data_distribusi = [];
         $random = [];
         $chart_interval = [];
         $chart_simulasi = [];
-        return view('dashboard', compact('data_distribusi','data_interval','random','data_chart', 'chart_interval', 'chart_simulasi'));
+        return view('dashboard', compact('kesimpulan', 'data_distribusi','data_interval','random','data_chart', 'chart_interval', 'chart_simulasi'));
     }
 
     public function generate(Request $request)
